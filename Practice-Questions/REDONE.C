@@ -1,0 +1,44 @@
+/* You have become good friends with Chef. Right now, Chef is busy in the kitchen, so he asked you to solve a problem for him.
+
+Consider a list of integers L
+. Initially, L contains the integers 1 through N, each of them exactly once (but it may contain multiple copies of some integers later). The order of elements in L is not important. You should perform the following operation N−1
+
+times:
+
+    Choose two elements of the list, let's denote them by X
+
+and Y
+. These two elements may be equal.
+Erase the chosen elements from L
+.
+Append the number X+Y+X⋅Y
+to L
+
+    .
+
+At the end, L
+contains exactly one integer. Find the maximum possible value of this integer. Since the answer may be large, compute it modulo 1,000,000,007 (109+7).
+
+Link: https://www.codechef.com/MAY19B/problems/REDONE
+*/
+
+#include <stdio.h>
+
+int main(void) {
+	// your code goes here
+	
+	int t,n,k,i,j;
+	unsigned long m;
+	scanf("%d",&t);
+	for(i=0; i<t; i++)
+	{
+	    scanf("%d",&n);
+	    m=1;
+	    for(j=2; j<=n; j++)
+	    {
+	        m=(m+j+m*j)%1000000007;
+	    }
+	    printf("%d\n",m);
+	}
+	return 0;
+}
